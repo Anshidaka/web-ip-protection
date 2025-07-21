@@ -149,7 +149,7 @@ body {
     margin-right: auto;
 }
 
-.authors {
+.hero .authors {
     font-size: 1.15rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
@@ -157,7 +157,7 @@ body {
     color: #ffffff;
 }
 
-.authors strong {
+.hero .authors strong {
     color: #ffffff;
     font-weight: 600;
     font-size: 1.25rem;
@@ -354,7 +354,7 @@ section h2 {
     letter-spacing: -0.5px;
 }
 
-.authors {
+.paper-card .authors {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: #5d6d7e;
@@ -856,11 +856,11 @@ section h2 {
         padding: 1.5rem;
     }
     
-    .authors {
+    .hero .authors {
         font-size: 1.05rem;
     }
     
-    .authors strong {
+    .hero .authors strong {
         font-size: 1.15rem;
     }
     
