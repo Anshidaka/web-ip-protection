@@ -328,13 +328,46 @@ function initChat() {
 let currentSlideIndex = 0;
 
 function initVideoCarousel() {
+    showSlide(currentSlideIndex);
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    
+    if (currentSlideIndex >= 2) { // Only 2 videos now
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = 1;
+    }
+    
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index - 1; // Convert from 1-based to 0-based
+    showSlide(currentSlideIndex);
+}
+
+function showSlide(index) {
     const slides = document.querySelectorAll('.video-slide');
     const indicators = document.querySelectorAll('.indicator');
     
-    // Ensure the first slide is active
-    if (slides.length > 0) {
-        slides[0].classList.add('active');
-        indicators[0].classList.add('active');
+    // Hide all slides
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+    
+    // Remove active class from all indicators
+    indicators.forEach(indicator => {
+        indicator.classList.remove('active');
+    });
+    
+    // Show current slide and activate indicator
+    if (slides[index]) {
+        slides[index].classList.add('active');
+    }
+    if (indicators[index]) {
+        indicators[index].classList.add('active');
     }
 }
 
@@ -571,6 +604,11 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+function initVideoUpload() {
+    // No upload functionality needed anymore as we have static videos
+    console.log('Video upload functionality disabled - using static videos');
+}
 
 // 将轮播函数暴露到全局作用域
 window.changeSlide = changeSlide;

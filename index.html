@@ -115,48 +115,29 @@
         <!-- Video demonstration -->
         <section id="demo" class="demo-section">
             <div class="container">
-                <h2>Demonstration Videos</h2>
+                <h2>Protection Demonstration</h2>
+                <p class="section-subtitle">Comparison of web content retrieval with and without our IP protection framework</p>
                 <div class="video-carousel-container">
                     <div class="video-carousel">
                         <div class="video-slide active">
-                            <div class="video-placeholder">
-                                <i class="fas fa-play-circle"></i>
-                                <h4>Fully Reject Defense</h4>
-                                <p>Demonstrating complete blocking of LLM content extraction</p>
-                                <div class="video-upload-area">
-                                    <input type="file" id="video-upload-1" accept="video/*" style="display: none;">
-                                    <button onclick="document.getElementById('video-upload-1').click()" class="btn btn-outline">
-                                        <i class="fas fa-upload"></i> Upload Video 1
-                                    </button>
-                                </div>
+                            <div class="video-content">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Without Protection</h4>
+                                <p>Web content is successfully retrieved and summarized by LLMs, exposing intellectual property</p>
+                                <video controls width="100%" style="max-height: 400px;">
+                                    <source src="without_policy.mov" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
                         
                         <div class="video-slide">
-                            <div class="video-placeholder">
-                                <i class="fas fa-shield-alt"></i>
-                                <h4>Partial Masking Strategy</h4>
-                                <p>Showcasing selective information masking protection</p>
-                                <div class="video-upload-area">
-                                    <input type="file" id="video-upload-2" accept="video/*" style="display: none;">
-                                    <button onclick="document.getElementById('video-upload-2').click()" class="btn btn-outline">
-                                        <i class="fas fa-upload"></i> Upload Video 2
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="video-slide">
-                            <div class="video-placeholder">
-                                <i class="fas fa-redirect"></i>
-                                <h4>Redirection Mechanism</h4>
-                                <p>Illustrating content redirection protection strategy</p>
-                                <div class="video-upload-area">
-                                    <input type="file" id="video-upload-3" accept="video/*" style="display: none;">
-                                    <button onclick="document.getElementById('video-upload-3').click()" class="btn btn-outline">
-                                        <i class="fas fa-upload"></i> Upload Video 3
-                                    </button>
-                                </div>
+                            <div class="video-content">
+                                <h4><i class="fas fa-shield-alt"></i> With Protection</h4>
+                                <p>Our framework prevents content extraction and blocks bypass attempts, safeguarding intellectual property</p>
+                                <video controls width="100%" style="max-height: 400px;">
+                                    <source src="with_policy.mov" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -168,7 +149,6 @@
                         <div class="carousel-indicators">
                             <span class="indicator active" onclick="currentSlide(1)"></span>
                             <span class="indicator" onclick="currentSlide(2)"></span>
-                            <span class="indicator" onclick="currentSlide(3)"></span>
                         </div>
                         <button class="carousel-btn next-btn" onclick="changeSlide(1)">
                             <i class="fas fa-chevron-right"></i>

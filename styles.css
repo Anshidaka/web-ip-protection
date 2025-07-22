@@ -422,34 +422,47 @@ section h2 {
     transform: translateX(0);
 }
 
-.video-placeholder {
-    padding: 4rem 2rem;
+.video-content {
+    padding: 2rem;
     text-align: center;
-    color: #5d6d7e;
 }
 
-.video-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #3498db;
-}
-
-.video-placeholder h4 {
+.video-content h4 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #2c3e50;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.video-placeholder p {
-    margin-bottom: 2rem;
+.video-content h4 i {
+    color: #3498db;
+    font-size: 1.3rem;
+}
+
+.video-content h4 i.fa-exclamation-triangle {
+    color: #e74c3c;
+}
+
+.video-content p {
+    margin-bottom: 1.5rem;
     font-size: 1rem;
-    opacity: 0.8;
+    color: #5d6d7e;
     font-weight: 300;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.video-upload-area {
-    margin-top: 2rem;
+.video-content video {
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15);
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    background: #000;
 }
 
 .carousel-controls {
