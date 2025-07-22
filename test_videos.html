@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        .video-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .info {
+            background: #e8f4fd;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Compatibility Test</h1>
+    
+    <div class="video-container">
+        <h2>🚨 Video 1: Without Protection (38MB)</h2>
+        <p>This video demonstrates web content being successfully retrieved and summarized by LLMs.</p>
+        <video controls preload="metadata">
+            <source src="without_policy.mov" type="video/quicktime">
+            <source src="without_policy.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <strong>File:</strong> without_policy.mov<br>
+            <strong>Size:</strong> ~38MB<br>
+            <strong>Format:</strong> Apple QuickTime (.MOV)
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>🛡️ Video 2: With Protection (5.3MB)</h2>
+        <p>This video shows our framework preventing content extraction and blocking bypass attempts.</p>
+        <video controls preload="metadata">
+            <source src="with_policy.mov" type="video/quicktime">
+            <source src="with_policy.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <strong>File:</strong> with_policy.mov<br>
+            <strong>Size:</strong> ~5.3MB<br>
+            <strong>Format:</strong> Apple QuickTime (.MOV)
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>Troubleshooting:</h3>
+        <ul>
+            <li>If videos don't play, try a different browser (Chrome, Firefox, Safari)</li>
+            <li>Check browser console for any error messages</li>
+            <li>Ensure your browser supports H.264 video codec</li>
+            <li>Try refreshing the page or clearing browser cache</li>
+        </ul>
+    </div>
+
+    <script>
+        // Log video loading events for debugging
+        document.querySelectorAll('video').forEach((video, index) => {
+            video.addEventListener('loadstart', () => {
+                console.log(`Video ${index + 1}: Started loading`);
+            });
+            
+            video.addEventListener('canplay', () => {
+                console.log(`Video ${index + 1}: Can start playing`);
+            });
+            
+            video.addEventListener('error', (e) => {
+                console.error(`Video ${index + 1}: Error occurred`, e);
+            });
+            
+            video.addEventListener('loadedmetadata', () => {
+                console.log(`Video ${index + 1}: Metadata loaded - Duration: ${video.duration}s`);
+            });
+        });
+    </script>
+</body>
+</html> 
