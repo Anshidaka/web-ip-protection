@@ -393,18 +393,19 @@ section h2 {
 /* 视频区域 */
 .demo-section {
     background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
-    padding: 8rem 0 8rem 0;
+    padding: 4.5rem 0 4.5rem 0;
 }
 
 .video-carousel-container {
-    max-width: 980px;
+    max-width: 1000px;
+    height: 1000px;
     margin: 0 auto;
     position: relative;
     background: rgba(255,255,255,0.97);
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(44,62,80,0.10);
-    padding: 6rem 2rem 6rem 2rem;
-    min-height: 850px;
+    padding: 3rem 2rem 1.5rem 2rem; /* 上 6rem，左右 2rem，下 2.5rem */
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -413,7 +414,6 @@ section h2 {
 .video-carousel {
     display: block;
     position: relative;
-    min-height: 420px;
     border-radius: 14px;
     background: none;
     overflow: visible;
@@ -422,28 +422,16 @@ section h2 {
 }
 
 .video-slide {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-    transition: opacity 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 }
 
 .video-slide.active {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 1;
+    display: block;
 }
 
 .video-content {
     width: 100%;
-    max-width: 940px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1.2rem 0 1.2rem 0;
     text-align: center;
@@ -484,13 +472,14 @@ section h2 {
 
 .video-content video {
     width: 100%;
-    max-width: 940px;
-    height: auto;
+    max-width: 1200px;
+    min-height: 600px;
+    height: 1000px;
     border-radius: 14px;
     box-shadow: 0 2px 12px rgba(44,62,80,0.08);
     border: 1px solid #e3eaf2;
     background: #000;
-    margin: 1.2rem auto 1.2rem auto;
+    margin: 1.2rem auto 2.5rem auto;
     display: block;
 }
 
